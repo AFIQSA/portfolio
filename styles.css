@@ -1,0 +1,222 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #0d0d0d, #1a1a1a);
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Moving Background Circles */
+body::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(0,168,232,0.6) 20%, rgba(0,168,232,0) 70%);
+    border-radius: 50%;
+    top: 10%;
+    left: 20%;
+    animation: moveCircles 10s infinite alternate;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(75,0,130,0.6) 20%, rgba(75,0,130,0) 70%);
+    border-radius: 50%;
+    top: 60%;
+    right: 15%;
+    animation: moveCircles 12s infinite alternate-reverse;
+    z-index: -1;
+}
+
+@keyframes moveCircles {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+    50% {
+        transform: translateY(50px) translateX(-50px);
+    }
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+}
+
+/* Glow Animation for Headings */
+h1, h2, h3 {
+    position: relative;
+    text-align: center;
+    animation: glowEffect 2s infinite alternate;
+}
+
+@keyframes glowEffect {
+    0% {
+        text-shadow: 0 0 10px #00A8E8, 0 0 20px #00A8E8;
+    }
+    100% {
+        text-shadow: 0 0 20px #00A8E8, 0 0 30px #00A8E8;
+    }
+}
+
+/* Fixed Header */
+nav {
+    background: linear-gradient(to right, #4B0082, #00A8E8);
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Navigation Links */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #00A8E8;
+}
+
+/* Sections */
+section {
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    margin: 50px auto;
+    width: 80%;
+}
+
+/* About Me Section */
+#about {
+    background: linear-gradient(135deg, #1E3C72, #2A5298);
+}
+
+/* Skills Section */
+#skills {
+    background: linear-gradient(135deg, #005AA7, #00C6FB);
+}
+
+/* Skills Container - No Changes */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #002E5D, #004E92);
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Skill Box */
+.skill-box {
+    background-color: #002E5D;
+    color: white;
+    padding: 15px 20px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.skill-box i {
+    font-size: 24px;
+    color: #00A8E8;
+}
+
+.skill-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Certifications Section */
+#certifications {
+    background-color: #1E1E2F;
+}
+
+#certifications a {
+    color: #00A8E8;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-block;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+#certifications a:hover {
+    text-shadow: 0 0 15px #00A8E8;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #4B0082, #1E1E2F);
+    border-radius: 10px;
+    color: white;
+    width: 70%;
+    margin: auto;
+}
+
+#contact h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-info p {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    font-size: 16px;
+    color: #00A8E8;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #00A8E8;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
